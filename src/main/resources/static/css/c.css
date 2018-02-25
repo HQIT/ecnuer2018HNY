@@ -1,0 +1,148 @@
+@charset "UTF-8";
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  color: #B8860B;
+  background: url("https://static.cloume.com/ncee/ecnuer2018/img/cloud.jpg") repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.lantern-bg {
+  /*background: url("https://static.cloume.com/ncee/ecnuer2018/img/lantern.png") no-repeat no-repeat;*/
+  /*background-size: 100% auto;*/
+}
+
+.operate-btn {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.send {
+  position: absolute;
+  left: 0;
+  bottom: 26px;
+  width: 100%;
+  font-size: 16px;
+  color: #FFE399;
+  padding-left: 16px;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+div.container {
+  background: url("../img/lanternr.png") no-repeat no-repeat right top;
+  background-size: 180px;
+  height: 100%;
+}
+
+.lantern-r {
+  height: 100%;
+  background: url("../img/lanternl.png") no-repeat no-repeat left top;
+  background-size: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+  align-items: stretch;
+}
+
+div.row {
+  position: relative;
+  text-align: center;
+}
+
+.operate {
+  flex-grow: 0;
+  margin-top: 10px;
+}
+
+.plane_bg {
+  height: 50px;
+}
+
+.foot > img {
+  height: 47px;
+}
+
+.avatar {
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.mock-text {
+  display: inline;
+}
+
+.fade-enter-active, .fade-leave-active, .fadein-enter-active, .fadein-leave-active {
+  transition: all .5s;
+}
+.fade-enter, .fade-leave-to, .fadein-leave-to, .fadein-enter {
+  opacity: 0;
+}
+.fadein-enter {
+  transform: translateY(20px);
+}
+.fadein-leave {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fadein-leave-to {
+  transform: translateY(20px);
+}
+
+div.portrait {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #FFE399;
+  margin: 0 auto;
+}
+
+.foot {
+  display: flex;
+  justify-content: center;
+}
+
+.foot > img {
+  margin-right: 10px;
+}
+
+.foot > p {
+  color: #FFECB4;
+}
+
+.slide-anim {
+  animation: slide .5s ease-out;
+}
+
+@keyframes slide {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (orientation: landscape) {
+  .visible-md {
+    display: block;
+  }
+
+  .visible-sm {
+    display: none!important;
+  }
+}
+@media (orientation: portrait) {
+  .visible-md {
+    display: none!important;
+  }
+  .visible-sm {
+    display: block;
+  }
+}

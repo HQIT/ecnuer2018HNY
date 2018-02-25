@@ -1,0 +1,135 @@
+@import "c.css";
+
+@charset "UTF-8";
+
+div.container {
+  background: url("https://static.cloume.com/ncee/ecnuer2018/img/cloud.jpg") repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  -webkit-background-size: contain;
+  background-size: contain;
+  justify-content: space-between;
+}
+
+.tab {
+  position: relative;
+}
+
+.shader {
+  display:inline-block;
+  position: absolute;
+  background: #00000033;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding-bottom: 28%;
+}
+
+div.row {
+  flex-grow: 0;
+}
+
+div.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 180%;
+  color: #999;
+  margin-top: 10px;
+}
+
+.mock-text span.highlight {
+  color: #E34C36;
+}
+
+.tabs > div {
+  width: 170px;
+}
+
+.tabs img {
+  width: 100%;
+}
+
+.receiver {
+  display: inline-block;
+  width: 30px;
+  border-radius: 30px;
+  border: 1px solid #FAC68D;
+}
+
+.receiver-wrp {
+  height: 30px;
+}
+
+.receiver:not(:first-child) {
+  margin-left: -15px;
+}
+
+.blessing-wrp {
+  background-color: #FAC68D;
+  margin: 0 20px 6px;
+  padding: 6px 10px;
+  width: 90%;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inline:not(:first-child) {
+  margin-top: 6px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.hint-wrp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.tabs .active {
+  color: #FAC68D;
+  opacity: 1;
+}
+
+div.list {
+  flex-basis: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+div.hint {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFE399;
+}
+
+div.list div.message {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #9C4133;
+}
+
+div.message div.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.message div.bottom {
+  text-align: left;
+}
+
+div.operate {
+  margin-top: 10px;
+}

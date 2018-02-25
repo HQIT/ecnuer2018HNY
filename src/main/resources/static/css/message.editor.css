@@ -1,0 +1,57 @@
+@import "c.css";
+
+@charset "UTF-8";
+
+div.container {
+  justify-content: flex-start;
+}
+
+div.row {
+  flex-grow: 0;
+}
+
+.name-input {
+  padding: 6px 0;
+  border-bottom: 1px solid lightgray;
+}
+
+div.userinfo {
+  margin-top: 50px;
+  color: #FCEB93;
+  font-size: 24px;
+}
+
+@media (max-height: 570px) {
+  div.userinfo {
+    margin-top: 10px;
+    font-size: 22px;
+  }
+  .portrait {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.modify {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+  height: 24px;
+}
+
+.content {
+  padding: 6px 0;
+}
+
+div.editor {
+  margin: 0 20px 20px;
+  flex-grow: 2;
+}
+
+.card {
+  padding: 10px;
+}
+
+.send {
+  bottom: 20px;
+}

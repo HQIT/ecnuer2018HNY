@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <title>ECNUer新年快乐</title>
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/message.statistic.css?v14}"/>
+    <script type="text/javascript" th:src="@{/js/config.js?v=14}"></script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script type="text/javascript"
+            src="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+</head>
+<body style="background-color: #EA5B53;">
+<div class="container lantern-bg" id="app">
+    <div class="lantern-r">
+        <div class="share" v-show="showShareHint">
+            <img src="https://static.cloume.com/ncee/ecnuer2018/img/arrow.png" class="share-hint"/>
+            <!--<img th:src="@{/img/arrow.png}" class="share-hint"/>-->
+        </div>
+        <transition name="fade">
+            <div class="mask" v-if="showShareHint" v-on:click="hideHint"></div>
+        </transition>
+
+        <div class="fu">
+            <img v-on:click.prevent="home" src="https://static.cloume.com/ncee/ecnuer2018/img/fu.png">
+        </div>
+        <div class="card">
+            <span class="content" v-text="message.content"></span>
+            <span class="receive-count" v-text="'已经有'+message.receivers.length+'位校友收到祝福'"></span>
+        </div>
+        <div class="avatar-wrp">
+            <img v-for="receiver in message.receivers" v-bind:src="receiver.portrait" class="avatar">
+        </div>
+        <div class="row operate">
+            <!--<img th:src="@{/img/share2.png}" v-on:click="newBlessing" class="plane_bg">-->
+            <img src="https://static.cloume.com/ncee/ecnuer2018/img/share2.png" v-on:click.prevent="newBlessing"
+                 class="plane_bg">
+        </div>
+
+        <div class="foot weui-footer">
+            <p class="weui-footer__text">华师智教通新高考走班排课软件团队提供支持</p>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    const _MSG_ID = /*[[${_MSG_ID}]]*/ '';
+    /*]]>*/
+</script>
+<script type="text/javascript" th:src="@{/js/message.statistic.js?v14}"></script>
+</body>
+</html>

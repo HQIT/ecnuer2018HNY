@@ -1,0 +1,181 @@
+@import "c.css";
+
+@charset "UTF-8";
+
+div.share {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    color: #F6E08F;
+    font-size: 20px;
+    z-index: 102;
+}
+
+div.share > img {
+    width: 40px;
+}
+
+div.userinfo {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 60px;
+    color: #F6E08F;
+    font-size: 20px;
+}
+
+.userinfo>div:nth-child(2) {
+    margin-top: 10px;
+}
+
+div.message {
+    flex-basis: 0;
+    flex-grow: 1;
+    background: url("https://static.cloume.com/ncee/ecnuer2018/img/seal.png") 90% 80% no-repeat no-repeat;
+    background-size: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #F6E08F;
+    font-size: 20px;
+    overflow: hidden;
+}
+
+div.message .counter {
+    font-size: 100%;
+  text-align: center;
+}
+
+div.message .counter > span {
+    font-size: 20px;
+    color: #F6E08F;
+}
+
+.grow {
+  height: 100%;
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 20px 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #F6E08F;
+  width: 35%;
+}
+
+.share-hint {
+    width: 40px;
+}
+
+.modal {
+  position: fixed;
+  width: 260px;
+  height: 243px;
+  padding: 30px 25px 90px 10px;
+  background: url("../img/popup.png") no-repeat no-repeat;
+  background-size: 100% 100%;
+  left: 50%;
+  top: 50%;
+  margin-left: -145px;
+  margin-top: -166px;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: all .3s ease-out;
+}
+
+.doge {
+  position: absolute;
+  z-index: 100;
+  right: 20px;
+  top: 10px;
+  width: 30px;
+}
+
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  z-index: 102;
+}
+
+.modal img:first-child {
+  width: 180px;
+}
+
+.modal img:nth-child(2) {
+  width: 135px;
+}
+
+.modal-down {
+  top: 100%;
+  margin-top: 0;
+}
+
+.modal span {
+  font-size: 14px;
+  color: #F6E08F;
+}
+
+.rotate {
+  animation: highlight 2s ease-out infinite;
+}
+
+.send {
+    bottom: 18px;
+    padding-left: 28px;
+}
+
+.mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 101;
+}
+
+div.message div.content {
+    color: #F6E08F;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 20px;
+    overflow: auto;
+}
+
+.operate.short {
+    padding-left: 16px;
+}
+
+div.foot {
+    flex-grow: 0;
+}
+
+@media (min-width: 666px) {
+  .message {
+    height: 100%;
+  }
+}
+
+@keyframes highlight {
+  0% { transform: rotate(0deg) }
+  30% { transform: rotate(45deg) }
+  60% { transform: rotate(-45deg) }
+  100% { transform: rotate(0deg) }
+}

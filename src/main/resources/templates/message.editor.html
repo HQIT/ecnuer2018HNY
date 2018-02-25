@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <title>ECNUer新年快乐</title>
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/message.editor.css?v=1}"/>
+    <script type="text/javascript" th:src="@{/js/config.js?v=124}"></script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script type="text/javascript"
+            src="//res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+</head>
+<body style="background-color: #EA5B53;">
+<div class="container lantern-bg" id="app">
+    <div class="lantern-r">
+        <div class="row userinfo">
+            <div class="portrait" :style="{ backgroundImage: `url(${user.portrait})` }"></div>
+            <div>{{user.realname || user.nickname}}</div>
+        </div>
+
+        <div class="row editor">
+            <div class="weui-cells card">
+                <input class="weui-input name-input" ref="author" type="text"
+                       :placeholder="user.realname || user.nickname"
+                       v-model="message.author"/>
+                <img src="https://static.cloume.com/ncee/ecnuer2018/img/edit.png" class="modify"
+                     v-on:click="modifyAuthor">
+                <textarea class="weui-textarea content" :placeholder="default_message" rows="6"
+                          v-model="message.content"></textarea>
+                <div class="weui-textarea-counter"><span v-html="message_size"></span>/{{message_size_max}}</div>
+            </div>
+        </div>
+
+        <div class="row operate">
+            <!--<img th:src="@{/img/generate.png}" v-on:click="commit" class="plane_bg">-->
+            <img src="https://static.cloume.com/ncee/ecnuer2018/img/generate.png" v-on:click.prevent="commit" class="plane_bg">
+        </div>
+        <div v-show="showError">
+            <div class="weui-mask_transparent"></div>
+            <div class="weui-toast">
+                <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                <p class="weui-toast__content">{{errorMessage}}</p>
+            </div>
+        </div>
+
+        <div class="foot weui-footer">
+            <p class="weui-footer__text">华师智教通新高考走班排课软件团队提供支持</p>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" th:src="@{/js/message.editor.js?v11}"></script>
+<script>
+    /// var vConsole = new VConsole({});
+</script>
+</body>
+</html>

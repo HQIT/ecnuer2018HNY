@@ -1,0 +1,14 @@
+server:
+  port: 5050
+  context-path: /ecnuer2018
+spring:
+  thymeleaf:
+    cache: false
+  data:
+    mongodb:
+      isDebug: true
+      database: ncee_ecnuer2018
+      username: ncee_ecnuer2018
+      password: 12345678
+      host: localhost
+      port: 27017

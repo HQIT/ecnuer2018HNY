@@ -1,0 +1,83 @@
+@import "c.css";
+
+.card {
+  max-height: 45%;
+  overflow: auto;
+  padding: 10px;
+  margin: 10px 20px;
+  background-color: #FFECB4;
+}
+
+div.share {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  color: #F6E08F;
+  font-size: 20px;
+  z-index: 101;
+}
+
+div.share > img {
+  width: 40px;
+}
+
+.share-hint {
+  width: 40px;
+}
+
+.mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.fu {
+  align-self: flex-start;
+  margin-top: 10px;
+}
+
+.fu > img {
+  width: 50px;
+  margin-left: 20px;
+}
+
+.send {
+  bottom: 20px;
+}
+
+.content {
+  color: #B22B11;
+  font-size: 22px;
+}
+
+.receive-count {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+@media (orientation: portrait) {
+  .receive-count {
+    margin-top: 20px;
+  }
+}
+
+.avatar-wrp {
+  flex-wrap: wrap;
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: auto;
+  margin: 10px 26px 0;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  margin-left: 10px;
+}

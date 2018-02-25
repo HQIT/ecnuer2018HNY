@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <title>ECNUer新年快乐</title>
+    <link rel="stylesheet" href="//res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css"/>
+    <link rel="stylesheet" th:href="@{/css/message.css?v12}"/>
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="//res.wx.qq.com/open/libs/weuijs/1.1.3/weui.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/config.js?v13}"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+</head>
+<body style="background-color: #EA5B53;">
+
+<div class="container" id="app">
+    <div class="row tabs">
+        <div class="tab">
+            <!--<div v-on:click.prevent="switchtab(0)" class="shader" v-if="index === 1"></div>-->
+            <img v-on:click.prevent="switchtab(0)" src="https://static.cloume.com/ncee/ecnuer2018/img/sent_tab.png" :style="{'opacity': index === 1 ? .6 : 1}">
+        </div>
+        <div class="tab">
+            <!--<div v-on:click.prevent="switchtab(1)" class="shader" v-if="index === 0"></div>-->
+            <img v-on:click.prevent="switchtab(1)" src="https://static.cloume.com/ncee/ecnuer2018/img/received_tab.png" :style="{'opacity': index === 0 ? .6 : 1}">
+        </div>
+    </div>
+
+    <div class="row list" v-bind:style="{'align-items': !blessings.length ? 'center':'flex-start'}">
+        <div class="message">
+            <template v-for="msg in blessings">
+                <sent-blessing v-if="index===0" v-bind:key="msg.index" v-bind:ith="msg.index" v-bind:id="msg.id"
+                               v-bind:timestamp="msg.timestamp"
+                               v-bind:receivers="msg.receivers" v-on:detail="detail"></sent-blessing>
+                <received-blessing v-else v-bind:key="msg.index" v-bind:ith="msg.index" v-bind:id="msg.id"
+                                   v-bind:timestamp="msg.timestamp"
+                                   v-bind:sender-name="msg.author" v-bind:sender-avatar="msg.sender.portrait"
+                                   v-on:click="detail(1, msg.id)" v-on:detail="detail"></received-blessing>
+            </template>
+        </div>
+        <div class="hint" v-if="!blessings.length && !isLoading">
+            <span v-if="index===0">还没送出过祝福~</span>
+            <span v-else>还没收到过祝福~</span>
+        </div>
+    </div>
+
+    <div class="row operate">
+        <!--<img th:src="@{/img/tosend.png}" v-on:click="share" class="plane_bg">-->
+        <img src="https://static.cloume.com/ncee/ecnuer2018/img/tosend.png" v-on:click.prevent="share" class="plane_bg">
+    </div>
+    <div class="row foot weui-footer">
+        <p class="weui-footer__text">华师智教通新高考走班排课软件团队提供支持</p>
+    </div>
+</div>
+
+<script type="text/javascript" th:src="@{/js/message.js?v12}"></script>
+</body>
+</html>

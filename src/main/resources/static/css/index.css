@@ -1,0 +1,34 @@
+@import "c.css";
+
+@charset "UTF-8";
+
+div.splash {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #AAA;
+}
+
+div.splash > img {
+    width: 128px;
+}
+
+div.smartedu {
+    margin-top: 50px;
+    color: #AAA;
+    font-size: 85%;
+}
+
+div.smartedu img {
+    opacity: .55;
+}
+
+div.smartedu, div.foot {
+    flex-grow: 0;
+}
+
+div.foot {
+    margin-bottom: 5px;
+}
